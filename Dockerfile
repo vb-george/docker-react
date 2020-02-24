@@ -10,6 +10,7 @@ RUN npm run build
 
 #Production ngnx container 
 FROM nginx 
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # where  /usr/share/nginx/html  is from docker gub nginx documentation, serve static files
 # nginx image runs it automactically
